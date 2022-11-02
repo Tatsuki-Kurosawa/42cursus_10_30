@@ -6,39 +6,39 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 02:47:46 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/10/17 22:54:58 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/02 20:06:04 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
 
-size_t	ft_strlcat(char	*restrict_dst, const char *restrict_src, size_t dstsize)
+size_t	ft_strlcat(char	*restrict dst, const char *restrict src, size_t dstsize)
 {
 	size_t	dst_len;
 	size_t	count;
-	char	*src;
+	char	*c_src;
 
-	if (!restrict_dst && restrict_src && dstsize == 0)
-		return (ft_strlen(restrict_src));
-	dst_len = ft_strlen((const char *)restrict_dst);
+	if (!dst && src && dstsize == 0)
+		return (ft_strlen(src));
+	dst_len = ft_strlen((const char *)dst);
 	if (dstsize < dst_len)
-		return (dstsize + ft_strlen(restrict_src));
-	src = (char *)restrict_src;
+		return (dstsize + ft_strlen(src));
+	c_src = (char *)src;
 	count = 0;
-	restrict_dst += dst_len;
+	dst += dst_len;
 	while (dstsize > dst_len + count + 1)
 	{
 		if (*src == '\0')
 		{
-			*restrict_dst = '\0';	
+			*dst = '\0';	
 			return (dst_len + count);
 		}
-		*restrict_dst++ = *src++;
+		*dst++ = *src++;
 		count++;
 	}
-	*restrict_dst = '\0';
-	return (dst_len + ft_strlen(restrict_src));
+	*dst = '\0';
+	return (dst_len + ft_strlen(c_src));
 }
 
 // int main(void)

@@ -1,5 +1,4 @@
 #include "libft.h"
-#include <unistd.h>
 
 void	*free_memory(char **return_value, int i);
 void	deli_null(char *nc_s, char c);
@@ -23,7 +22,7 @@ char	**ft_split(char const *s, char c)
 	// printf("nc_sの値：%s\n", nc_s);
 	// printf("sの値：%s\n", s);
 	number_exdeli = counter(s, c);
-	return_value = (char **)malloc(number_exdeli + 1);
+	return_value = (char **)malloc(sizeof(char *) * (number_exdeli + 1));
 	if (!return_value)
 		return (NULL);
 	deli_null(nc_s, c);
@@ -107,23 +106,23 @@ void	*free_memory(char **return_value, int i)
 	return (NULL);
 }
 
-// int	main(void)
-// {
-// 	// char	str[20] = "aa b    cc d ";
-// 	char	**return_value_str;
+int	main(void)
+{
+	// char	str[20] = "aa b    cc d ";
+	char	**return_value_str;
 
-// 	char	string[50] = "      split       this for   me  !       ";
-// 	// char	string[20] = "aa bb cc dd";
-// 	size_t	return_value;
-// 	size_t	number;
+	char	string[50] = "split       this for   me  !       ";
+	// char	string[20] = "aa bb cc dd";
+	size_t	return_value;
+	size_t	number;
 
-// 	return_value = counter(string, ' ');
-// 	// printf("%zu\n", return_value);
-// 	printf("元の文字列：%s\n", string);
-// 	number = strlen(string);
-// 	printf("元の文字列の文字数：%zu\n", number);
-// 	return_value_str = ft_split(string, ' ');
-// 	for (size_t i = 0; i <= return_value; i++)
-// 	// for (size_t i = 0; i < 5; i++)
-// 		printf("%s\n", return_value_str[i]);
-// }
+	return_value = counter(string, ' ');
+	// printf("%zu\n", return_value);
+	printf("元の文字列：%s\n", string);
+	number = strlen(string);
+	printf("元の文字列の文字数：%zu\n", number);
+	return_value_str = ft_split(string, ' ');
+	for (size_t i = 0; i <= return_value; i++)
+	// for (size_t i = 0; i < 5; i++)
+		printf("%s\n", return_value_str[i]);
+}

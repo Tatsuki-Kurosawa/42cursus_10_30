@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 16:41:19 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/02 16:41:20 by kurosawaits      ###   ########.fr       */
+/*   Created: 2022/11/03 01:35:00 by kurosawaits       #+#    #+#             */
+/*   Updated: 2022/11/03 01:35:01 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **list, t_list *new)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	t_list	*next_data;
+	t_list	*tmp;
 
-	next_data = *list;
-	*list = new;
-	new->next = next_data;
+	if (lst && del)
+	{
+		tmp = lst;
+		del(tmp->content);
+		lst = tmp->next;
+		free(tmp);
+	}
 }
-
-// 今listが差しているデータのポインタを別の変数に移して取っておく
-// listがさすデータを変更する
-// 新しいデータのnextに、listが差していたデータのポインタを代入する
