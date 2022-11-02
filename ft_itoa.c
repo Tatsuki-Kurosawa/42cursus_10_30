@@ -29,7 +29,7 @@ char	*ft_itoa(int n)
 		n /= 10;
 		count++;
 	}
-	return (convert(sign, count, r_n, amari)); // 1, 1, 0, 0
+	return (convert(sign, count, r_n, amari));
 }
 
 char	*convert(int sign, int count, int r_n, int r_amari)
@@ -43,6 +43,12 @@ char	*convert(int sign, int count, int r_n, int r_amari)
 	return_value = (char *)malloc(count + 1);
 	if (!return_value)
 		return (NULL);
+	if (r_n == 0)
+	{
+		return_value[0] = 48;
+		return_value[1] = '\0';
+		return (return_value);
+	}
 	check = count;
 	while (count >= 0)
 	{
@@ -50,8 +56,6 @@ char	*convert(int sign, int count, int r_n, int r_amari)
 			*(return_value + count) = '\0';
 		else if (r_amari != 0 && count == check - 1)
 			*(return_value + count) = r_amari + 48;
-		// else if (r_n == 0)
-		// 	*(return_value + count) = r_n + 48;
 		else if (r_n != 0)
 		// else
 		{
@@ -94,7 +98,7 @@ char	*under(int sign, int count, int n)
 // 	char	*ptr;
 // 	int		strres;
 
-// 	value = -1;
+// 	value = INT_MIN;
 // 	// value = -0;
 // 	// ptr = ft_itoa();
 // 	ptr = ft_itoa(value);

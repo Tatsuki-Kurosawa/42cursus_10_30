@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Libft.h                                            :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 12:40:47 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/10/29 19:10:04 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/02 11:43:25 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 #define LIBFT_H
+#include <ctype.h>
 #include <stdio.h>
 #include <limits.h>
 #include <stdlib.h>
