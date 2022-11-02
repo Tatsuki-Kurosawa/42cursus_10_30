@@ -1,6 +1,12 @@
-#include "libft.h"
+#include <stdio.h>
 
 int	main(void)
 {
-	write(1, "abcdef", ft_strlen("abcdef") + 1);
+	typedef struct person
+	{
+		char	name;
+		int		age;
+	}	t_person;
+
+	printf("%lu", sizeof(t_person));
 }
