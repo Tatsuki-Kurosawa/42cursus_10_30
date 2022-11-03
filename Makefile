@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/11/03 17:11:17 by kurosawaits       #+#    #+#              #
+#    Updated: 2022/11/03 17:11:18 by kurosawaits      ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 SRCS	= 	ft_isalpha.c	\
 			ft_isdigit.c	\
 			ft_isalnum.c	\
@@ -37,7 +49,8 @@ SRCS	= 	ft_isalpha.c	\
 			ft_lstsize.c		\
 			ft_lstlast.c	\
 			ft_lstadd_back.c	\
-			ft_lstdelone.c
+			ft_lstdelone.c	\
+			ft_lstclear.c
 
 OBJS	=	$(SRCS:.c=.o)
 

@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 18:58:27 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/03 16:34:30 by kurosawaits      ###   ########.fr       */
+/*   Created: 2022/11/03 16:21:52 by kurosawaits       #+#    #+#             */
+/*   Updated: 2022/11/03 17:14:04 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **list, t_list *new)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	*ptr;
+	t_list	*tmp;
 
-	if (!*list)
-		*list = new;
-	else
+	if (lst && del)
 	{
-		ptr = ft_lstlast(*list);
-		if (ptr != NULL)
-			ptr->next = new;
+		while (*lst)
+		{
+			tmp = (*lst)->next;
+			ft_lstdelone((*lst), del);
+			(*lst) = tmp;
+		}
 	}
 }
-
-// newはt_list型の値（ノード)をさすポインタ型の値のため、
+// t_listとstruct s_listは同じ型

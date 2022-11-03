@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 12:40:47 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/02 22:54:43 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/03 16:42:48 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+// contentはvoidポインタ（ポインタ型）
+// nextは次のstruct s_list型のノードを指すポインタ（ポインタ型）
 
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
@@ -66,5 +68,6 @@ int			ft_lstsize(t_list *lst);
 t_list		*ft_lstlast(t_list *lst);
 void		ft_lstadd_back(t_list **list, t_list *new);
 void		ft_lstdelone(t_list *lst, void (*del)(void *));
+void		ft_lstclear(t_list **lst, void (*del)(void*));
 
 #endif
