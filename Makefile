@@ -6,7 +6,7 @@
 #    By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/03 17:11:17 by kurosawaits       #+#    #+#              #
-#    Updated: 2022/11/03 17:11:18 by kurosawaits      ###   ########.fr        #
+#    Updated: 2022/11/03 21:41:49 by kurosawaits      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,9 @@ SRCS	= 	ft_isalpha.c	\
 			ft_lstlast.c	\
 			ft_lstadd_back.c	\
 			ft_lstdelone.c	\
-			ft_lstclear.c
+			ft_lstclear.c	\
+			ft_lstiter.c	\
+			ft_lstmap.c
 
 OBJS	=	$(SRCS:.c=.o)
 
