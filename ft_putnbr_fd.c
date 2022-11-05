@@ -2,41 +2,37 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	int		sho;
-	int		mod;
 	char	chara;
 
-	if (n == 0)
-	{
-		chara = 48;
-		write(fd, &chara, 1);
-	}
 	if (n < 0)
 	{
-		write(fd, "-", 1);
 		if (n == INT_MIN)
 		{
-			mod = n % 10;
-			mod *= -1;
-			chara = mod + 48;
-			write(fd, &chara, 1);
-			n /= 10;
+			write(fd, "-2147483648", ft_strlen("-2147483648"));
+			return ;
 		}
+		ft_putchar_fd('-', fd);
 		n *= -1;
+		ft_putnbr_fd(n, fd);
 	}
-	if (n > 0)
+	else if (n >= 0)
 	{
-		sho = n;
-		mod = sho % 10;
-		chara = mod + 48;
-		ft_putnbr_fd(sho / 10, fd);
-		write(fd, &chara, 1);
+		if (n < 10)
+			ft_putchar_fd(n + 48, fd);
+		else
+		{
+			chara = n % 10 + 48;
+			ft_putnbr_fd(n / 10, fd);
+			ft_putchar_fd(chara, fd);
+		}
+		return ;
 	}
 }
 
-int	main(void)
-{
-	ft_putnbr_fd(-2147483648, 1);
-	// printf("\n");
-	// printf("%d\n", 46/(-10));
-}
+// int	main(void)
+// {
+// 	ft_putnbr_fd(10, 1);
+// 	// ft_putnbr_fd(-48, 1);
+// 	// printf("\n");
+// 	// printf("%d\n", 46/(-10));
+// }
