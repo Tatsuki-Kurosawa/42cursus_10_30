@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 22:17:52 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/10/12 22:18:10 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/06 20:29:07 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strrchr(const char *s, int c)
 	i = ft_strlen(s);
 	while (i)
 	{
-		if (*((unsigned char *)s + i) == (char)c)
+		if (*((char *)s + i) == (char)c)
 			return ((char *)(s + i));
 		i--;
 	}
-	if (*((unsigned char *)s + i) == (char)c)
+	if (*((char *)s + i) == (char)c)
 	{
 		return ((char *)(s + i));
 	}

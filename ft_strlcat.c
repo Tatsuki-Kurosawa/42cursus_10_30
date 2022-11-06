@@ -6,12 +6,11 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 02:47:46 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/02 20:06:04 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/06 20:20:49 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 size_t	ft_strlcat(char	*restrict dst, const char *restrict src, size_t dstsize)
 {
@@ -31,7 +30,7 @@ size_t	ft_strlcat(char	*restrict dst, const char *restrict src, size_t dstsize)
 	{
 		if (*src == '\0')
 		{
-			*dst = '\0';	
+			*dst = '\0';
 			return (dst_len + count);
 		}
 		*dst++ = *src++;

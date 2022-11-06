@@ -6,12 +6,11 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 06:42:11 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/03 21:40:55 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/06 19:19:11 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <limits.h>
 
 int	check_ovunflow(int sign, unsigned long sum, char c)
 {

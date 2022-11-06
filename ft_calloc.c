@@ -1,70 +1,34 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/06 19:20:56 by kurosawaits       #+#    #+#             */
+/*   Updated: 2022/11/06 19:23:03 by kurosawaits      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#include <stdint.h>
 
-// void	*ft_calloc(size_t count, size_t size)
-// {
-// 	void	*ptr;
-// 	size_t	number_of_byte;
-
-// 	if (count == 0 || size == 0)
-// 	{
-// 		ptr = malloc(1);
-// 		if(!ptr)
-// 			return (NULL);
-// 		ft_bzero(ptr, 1);
-// 		return (ptr);
-// 	}
-// 	if (SIZE_MAX / count < size)
-// 		return (NULL);
-// 	number_of_byte = count * size;
-// 	ptr = malloc(number_of_byte);
-// 	if(!ptr)
-// 		return (NULL);
-// 	ft_bzero(ptr, number_of_byte);
-// 	return (ptr);
-// }
-
-void    *ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-    void    *temp;
+	void	*temp;
 
-    if (size == 0 || count == 0)
-    {
+	if (size == 0 || count == 0)
+	{
 		size = 1;
 		count = 1;
-    }
+	}
 	if (SIZE_MAX / size < count)
 		return (NULL);
 	temp = malloc(size * count);
 	if (temp == NULL)
 		return (NULL);
 	ft_bzero(temp, count * size);
-    return (temp);
+	return (temp);
 }
-
-// void    *ft_calloc(size_t count, size_t size)
-// {
-//     void    *temp;
-
-//     if (size == 0 || count == 0)
-//     {
-//         temp = malloc(1);
-//         if (temp == NULL)
-//             return (NULL);
-//         ft_bzero(temp, 1);
-//     }
-//     else
-//     {
-//         if (SIZE_MAX / size < count)
-//             return (NULL);
-//         temp = malloc(size * count);
-//         if (temp == NULL)
-//             return (NULL);
-//         ft_bzero(temp, count * size);
-//     }
-//     return (temp);
-// }
 
 // int	main(void)
 // {

@@ -6,26 +6,26 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 19:28:19 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/10/15 18:00:29 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/06 20:34:12 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t len)
 {
 	char	*str;
 
 	str = s;
-	if (n <= 0)
+	if (len == 0)
 		return (s);
 	else
 	{
-		while (n)
+		while (len)
 		{
 			*str = c;
 			str++;
-			n--;
+			len--;
 		}
 		return (s);
 	}
@@ -35,7 +35,6 @@ void	*ft_memset(void *s, int c, size_t n)
 // int main(void)
 // {
 //     char buf[] = "ABCDEFGHIJK";
-	
 //     // memset(NULL, 1, 5);
 //     ft_memset(NULL, 1, 5);
 //     printf("buf文字列→%s\n",buf);

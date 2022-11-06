@@ -6,13 +6,12 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:03:12 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/10/15 21:03:13 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/06 20:23:29 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include<string.h>
+
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	char	*r_haystack;
@@ -23,7 +22,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		return (0);
 	if (ft_strlen(haystack) < ft_strlen(needle))
 		return (NULL);
-	while (r_haystack )
+	while (r_haystack)
 	{
 		if (len < ft_strlen(needle))
 			return (NULL);
@@ -40,7 +39,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 // {
 
 // 			// size_t	size = 60000 * 4;
-// 			// char	*s2 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB";
+			// char	*s2 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB";
 // 			// char	*s1 = malloc(size + 1);
 
 // 			// memset(s1, 'A', size);

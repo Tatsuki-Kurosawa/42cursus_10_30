@@ -6,14 +6,13 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 20:38:34 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/04 16:38:01 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/06 19:32:58 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
 {
 	char	*str_dest;
 	char	*str_src;

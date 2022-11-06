@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 01:35:00 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/03 16:19:31 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/06 19:26:32 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 		tmp = lst;
 		del(tmp->content);
 		free(tmp);
-		// printf("2. %p\n", lst);
 	}
 }
