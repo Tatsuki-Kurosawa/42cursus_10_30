@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 14:51:42 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/06 20:25:29 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/06 21:04:24 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t			i;
+	size_t	i;
 	char	*s_char;
 
 	i = 0;

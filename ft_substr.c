@@ -6,43 +6,43 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 20:30:33 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/06 20:30:34 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/06 21:21:29 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	*return_value(char *return_ptr, size_t count);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*return_ptr;
 	size_t	count;
 
-	if (s == NULL)
-		return (NULL);
+	count = 0;
 	return_ptr = (char *)malloc(len + 1);
-	if (!return_ptr)
+	if (s == NULL || !return_ptr)
 		return (NULL);
 	else if (start >= ft_strlen(s) || len == 0)
-	{
-		*return_ptr = '\0';
-		return (return_ptr);
-	}
+		return (return_value(return_ptr, count));
 	else
 	{
-		count = 0;
 		while (count < len)
 		{
 			if (*(s + start + count) == '\0')
-			{
-				*(return_ptr + count) = '\0';
-				return (return_ptr);
-			}
+				return (return_value(return_ptr, count));
 			*(return_ptr + count) = *(s + start + count);
 			count++;
 		}
 		*(return_ptr + count) = '\0';
 		return (return_ptr);
 	}
+}
+
+char	*return_value(char *return_ptr, size_t count)
+{
+	*(return_ptr + count) = '\0';
+	return (return_ptr);
 }
 
 // int	main(void)
@@ -62,7 +62,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // 	// if (!strncmp(ret, str + 5, size))
 // 	// 	free(ret);
 // }
-
-
-// ヌルポインタ送った場合の処理ができてない？
-// あと行数も

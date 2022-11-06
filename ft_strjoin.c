@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 20:20:11 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/06 20:20:12 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/06 21:11:58 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,30 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*s1_joined;
-	size_t	number_of_byte;
+	char	*return_ptr;
 	size_t	count_1;
 	size_t	count_2;
 
 	if (!s1 || !s2)
 		return (NULL);
-	number_of_byte = ft_strlen(s1) + ft_strlen(s2);
-	s1_joined = (char *)malloc(number_of_byte);
-	if (!s1_joined)
+	return_ptr = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!return_ptr)
 		return (NULL);
 	count_1 = 0;
 	count_2 = 0;
 	while (*(s1 + count_1) != '\0')
 	{
-		*(s1_joined + count_1) = *(s1 + count_1);
+		*(return_ptr + count_1) = *(s1 + count_1);
 		count_1++;
 	}
 	while (*(s2 + count_2) != '\0')
 	{
-		*(s1_joined + count_1) = *(s2 + count_2);
+		*(return_ptr + count_1) = *(s2 + count_2);
 		count_1++;
 		count_2++;
 	}
-	*(s1_joined + count_1) = '\0';
-	return (s1_joined);
+	*(return_ptr + count_1) = '\0';
+	return (return_ptr);
 }
 
 // int	main(void)
@@ -55,6 +53,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 // 	number = strlen(res);
 // 	printf("%zu\n", number);
 // }
-
-
-// ヌルポインタ送った場合の処理ができてない？
