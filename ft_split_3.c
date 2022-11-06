@@ -3,13 +3,13 @@
 char	**allocate(char *nc_s, size_t number_s, char **return_value);
 char	*makeptr(char *s);
 void	*free_memory(char **return_value, int i);
-void	deli_null(char *nc_s, char c);
 size_t	counter(char const *s, char c);
 
 char	**ft_split(char const *s, char c)
 {
 	char	**return_value;
 	char	*nc_s;
+	int		i;
 	size_t	number_s;
 
 	if (!s)
@@ -19,7 +19,13 @@ char	**ft_split(char const *s, char c)
 	if (!return_value)
 		return (NULL);
 	nc_s = makeptr((char *)s);
-	deli_null(nc_s, c);
+	i = 0;
+	while (*(nc_s + i))
+	{
+		if (*(nc_s + i) == c)
+			*(nc_s + i) = '\0';
+		i++;
+	}
 	return (allocate(nc_s, number_s, return_value));
 }
 
@@ -68,17 +74,6 @@ char	*makeptr(char *s)
 	return (return_ptr);
 }
 
-// 区切り文字をヌル文字に置き換える
-void	deli_null(char *nc_s, char c)
-{
-	while (*nc_s)
-	{
-		if (*nc_s == c)
-			*nc_s = '\0';
-		nc_s++;
-	}
-}
-
 // 単語がいくつあるかをカウント
 // 単語の先頭にきたらflagを1にし単語数をカウント、flagの1の時は区切り文字でなくても条件を満たさない. 区切り文字にきたらflagを0にする
 // size_tをintのどっちを使った方がいいのか
@@ -114,22 +109,22 @@ void	*free_memory(char **return_value, int i)
 	return (NULL);
 }
 
-// int	main(void)
-// {
-// 	// char	str[20] = "aa b    cc d ";
-// 	char	**return_value_str;
+int	main(void)
+{
+	// char	str[20] = "aa b    cc d ";
+	char	**return_value_str;
 
-// 	// char	*str="\0aa\0bbb";
-// 	char	*str = "aa bb cc dd";
-// 	size_t	return_value;
-// 	size_t	number;
+	// char	*str="\0aa\0bbb";
+	char	*str = "aa bb cc dd";
+	size_t	return_value;
+	size_t	number;
 
-// 	// return_value = counter(str, '\0');
-// 	// printf("%zu\n", return_value);
-// 	// printf("元の文字列：%s\n", string);
-// 	// number = strlen(str);
-// 	// printf("元の文字列の文字数：%zu\n", number);
-// 	return_value_str = ft_split(str, ' ');
-// 	for (size_t i = 0; i <= 3; i++)
-// 		printf("%s\n", return_value_str[i]);
-// }
+	// return_value = counter(str, '\0');
+	// printf("%zu\n", return_value);
+	// printf("元の文字列：%s\n", string);
+	// number = strlen(str);
+	// printf("元の文字列の文字数：%zu\n", number);
+	return_value_str = ft_split(str, ' ');
+	for (size_t i = 0; i <= 3; i++)
+		printf("%s\n", return_value_str[i]);
+}
