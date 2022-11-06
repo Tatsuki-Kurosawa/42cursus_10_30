@@ -109,22 +109,22 @@ void	*free_memory(char **return_value, int i)
 	return (NULL);
 }
 
-int	main(void)
-{
-	// char	str[20] = "aa b    cc d ";
-	char	**return_value_str;
+// int	main(void)
+// {
+// 	// char	str[20] = "aa b    cc d ";
+// 	char	**return_value_str;
 
-	// char	*str="\0aa\0bbb";
-	char	*str = "aa bb cc dd";
-	size_t	return_value;
-	size_t	number;
+// 	// char	*str="\0aa\0bbb";
+// 	char	*str = "aa bb cc dd";
+// 	size_t	return_value;
+// 	size_t	number;
 
-	// return_value = counter(str, '\0');
-	// printf("%zu\n", return_value);
-	// printf("元の文字列：%s\n", string);
-	// number = strlen(str);
-	// printf("元の文字列の文字数：%zu\n", number);
-	return_value_str = ft_split(str, ' ');
-	for (size_t i = 0; i <= 3; i++)
-		printf("%s\n", return_value_str[i]);
-}
+// 	// return_value = counter(str, '\0');
+// 	// printf("%zu\n", return_value);
+// 	// printf("元の文字列：%s\n", string);
+// 	// number = strlen(str);
+// 	// printf("元の文字列の文字数：%zu\n", number);
+// 	return_value_str = ft_split(str, ' ');
+// 	for (size_t i = 0; i <= 3; i++)
+// 		printf("%s\n", return_value_str[i]);
+// }

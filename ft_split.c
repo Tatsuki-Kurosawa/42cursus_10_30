@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 00:20:05 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/07 00:20:06 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/07 00:26:52 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 char	**allocate(char *nc_s, size_t number_s, char **return_value);
 char	*makeptr(char *s);
 void	*free_memory(char **return_value, int i);
-void	deli_null(char *nc_s, char c);
 size_t	counter(char const *s, char c);
 
 char	**ft_split(char const *s, char c)
 {
 	char	**return_value;
 	char	*nc_s;
+	int		i;
 	size_t	number_s;
 
 	if (!s)
@@ -31,7 +31,13 @@ char	**ft_split(char const *s, char c)
 	if (!return_value)
 		return (NULL);
 	nc_s = makeptr((char *)s);
-	deli_null(nc_s, c);
+	i = 0;
+	while (*(nc_s + i))
+	{
+		if (*(nc_s + i) == c)
+			*(nc_s + i) = '\0';
+		i++;
+	}
 	return (allocate(nc_s, number_s, return_value));
 }
 
@@ -78,17 +84,6 @@ char	*makeptr(char *s)
 	}
 	return_ptr[i] = '\0';
 	return (return_ptr);
-}
-
-// 区切り文字をヌル文字に置き換える
-void	deli_null(char *nc_s, char c)
-{
-	while (*nc_s)
-	{
-		if (*nc_s == c)
-			*nc_s = '\0';
-		nc_s++;
-	}
 }
 
 // 単語がいくつあるかをカウント
