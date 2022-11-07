@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:03:12 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/06 20:23:29 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/08 02:02:41 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,21 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char	*r_haystack;
-	int		check;
+	size_t	i;
+	size_t	cont;
 
-	r_haystack = (char *)haystack;
-	if (haystack == NULL && len == 0)
-		return (0);
-	if (ft_strlen(haystack) < ft_strlen(needle))
+	if (!haystack && needle && len == 0)
 		return (NULL);
-	while (r_haystack)
+	if (ft_strlen(haystack) < ft_strlen(needle) || len < ft_strlen(needle))
+		return (NULL);
+	i = 0;
+	cont = len - ft_strlen(needle);
+	while (i <= cont)
 	{
-		if (len < ft_strlen(needle))
-			return (NULL);
-		check = ft_strncmp(r_haystack, needle, ft_strlen(needle));
-		if (check == 0)
-			return ((char *)r_haystack);
-		len--;
-		r_haystack++;
+		if (ft_memcmp(haystack, needle, ft_strlen(needle)) == 0)
+			return ((char *)haystack);
+		haystack++;
+		i++;
 	}
 	return (NULL);
 }

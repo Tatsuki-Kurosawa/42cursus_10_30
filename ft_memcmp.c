@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 19:30:08 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/06 19:30:26 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/08 00:30:09 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,17 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t			i;
-	unsigned char	*s1_char;
-	unsigned char	*s2_char;
+	unsigned char	*con_s1;
+	unsigned char	*con_s2;
 
-	s1_char = (unsigned char *)s1;
-	s2_char = (unsigned char *)s2;
-	i = 0;
-	while (i < n)
+	con_s1 = (unsigned char *)s1;
+	con_s2 = (unsigned char *)s2;
+	while (n--)
 	{
-		if (*s1_char != *s2_char)
-		{
-			if (*s1_char < *s2_char)
-				return (*s1_char - *s2_char);
-			else if (*s1_char > *s2_char)
-				return (*s1_char - *s2_char);
-		}
-		i++;
-		s1_char++;
-		s2_char++;
+		if (*con_s1 != *con_s2)
+			return (*con_s1 - *con_s2);
+		con_s1++;
+		con_s2++;
 	}
 	return (0);
 }
