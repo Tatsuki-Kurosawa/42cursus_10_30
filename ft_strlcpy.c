@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:51:28 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/06 15:28:32 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/07 14:53:33 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,25 @@
 
 size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 {
+	size_t	src_len;
 	size_t	i;
-	size_t	len;
 
-	i = 0;
-	len = ft_strlen(src);
+	src_len = ft_strlen(src);
 	if (dstsize == 0)
-		return (len);
+		return (src_len);
+	i = 0;
 	while (i + 1 < dstsize)
 	{
-		if (*src == '\0')
+		if (*(src + i) == '\0')
 		{
-			*dst = '\0';
-			return (len);
+			*(dst + i) = '\0';
+			return (src_len);
 		}
-		*dst = *src;
-		dst++;
-		src++;
+		*(dst + i) = *(src + i);
 		i++;
 	}
-	*dst = '\0';
-	return (len);
+	*(dst + i) = '\0';
+	return (src_len);
 }
 
 // int main(void)
