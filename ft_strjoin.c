@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 20:20:11 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/06 21:11:58 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/08 16:12:41 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	*(return_ptr + count_1) = '\0';
 	return (return_ptr);
 }
+
+// 新しいポインタを作り二つの文字列をつなげて入れる
 
 // int	main(void)
 // {

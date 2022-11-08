@@ -6,23 +6,13 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 06:42:11 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/06 19:19:11 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/08 15:58:28 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_ovunflow(int sign, unsigned long sum, char c)
-{
-	unsigned long	tmp;
-
-	if (sign == 1)
-		c++;
-	tmp = LONG_MAX / 10;
-	if (tmp < sum || (sum == tmp && LONG_MAX % 10 + 1 < c - '0'))
-		return (1);
-	return (0);
-}
+int	check_ovunflow(int sign, unsigned long sum, char c);
 
 int	ft_atoi(const char *str)
 {
@@ -51,6 +41,24 @@ int	ft_atoi(const char *str)
 		rp_str++;
 	}
 	return (sum * sign);
+}
+
+int	check_ovunflow(int sign, unsigned long sum, char c)
+{
+	unsigned long	tmp;
+
+	tmp = LONG_MAX / 10;
+	if (sign == 1)
+	{
+		if (tmp < sum || (sum == tmp && LONG_MAX % 10 < c - '0'))
+			return (1);
+	}
+	else if (sign == -1)
+	{
+		if (tmp < sum || (sum == tmp && (LONG_MIN % 10) * (-1) < c - '0'))
+			return (1);
+	}
+	return (0);
 }
 
 // int	main(void) {

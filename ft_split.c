@@ -6,89 +6,83 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 00:20:05 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/07 00:26:52 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/08 22:21:47 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**allocate(char *nc_s, size_t number_s, char **return_value);
-char	*makeptr(char *s);
-void	*free_memory(char **return_value, int i);
-size_t	counter(char const *s, char c);
+const char	*check(char const *s, char c, size_t count, size_t num);
+char		*allocate(char *s, char c);
+void		*free_memory(char **return_value, int i);
+size_t		counter(char const *s, char c);
 
 char	**ft_split(char const *s, char c)
 {
 	char	**return_value;
-	char	*nc_s;
-	int		i;
-	size_t	number_s;
+	size_t	count;
+	size_t	num;
 
 	if (!s)
 		return (NULL);
-	number_s = ft_strlen(s);
 	return_value = malloc(sizeof(char *) * (counter(s, c) + 1));
 	if (!return_value)
 		return (NULL);
-	nc_s = makeptr((char *)s);
-	i = 0;
-	while (*(nc_s + i))
+	count = 0;
+	num = counter(s, c);
+	while (*s == c)
+		s++;
+	while (count < num)
 	{
-		if (*(nc_s + i) == c)
-			*(nc_s + i) = '\0';
-		i++;
+		return_value[count] = allocate((char *)s, c);
+		if (!return_value[count])
+			return (free_memory(return_value, count));
+		s = check(s, c, count, num);
+		count++;
 	}
-	return (allocate(nc_s, number_s, return_value));
-}
-
-char	**allocate(char *nc_s, size_t number_s, char **return_value)
-{
-	int	position_s;
-	int	i;
-	int	flag;
-
-	position_s = 0;
-	i = 0;
-	flag = 0;
-	while (number_s--)
-	{
-		if (*(nc_s + position_s) == '\0')
-			flag = 0;
-		else if (*(nc_s + position_s) != '\0' && flag == 0)
-		{
-			return_value[i] = ft_strdup((const char *)(nc_s + position_s));
-			if (!return_value[i])
-				return (free_memory(return_value, i));
-			i++;
-			flag = 1;
-		}
-		position_s++;
-	}
-	return_value[i] = NULL;
+	return_value[count] = NULL;
 	return (return_value);
 }
 
-char	*makeptr(char *s)
+char	*allocate(char *s, char c)
 {
-	char	*return_ptr;
-	size_t	len;
+	char	*str;
+	char	*front;
+	char	*back;
+	size_t	size;
 	size_t	i;
 
+	size = 0;
+	front = s;
+	while (*front != c && *front != '\0')
+		front++;
+	back = front;
+	front = s;
+	size = ft_strlen(front) - ft_strlen(back);
+	str = malloc(size + 1);
 	i = 0;
-	len = ft_strlen(s);
-	return_ptr = malloc(len + 1);
-	while (i < len)
+	while (i < size)
 	{
-		return_ptr[i] = s[i];
+		*(str + i) = *(front + i);
 		i++;
 	}
-	return_ptr[i] = '\0';
-	return (return_ptr);
+	*(str + i) = '\0';
+	return (str);
 }
 
-// 単語がいくつあるかをカウント
-// 単語の先頭にきたらflagを1にし単語数をカウント、flagの1の時は区切り文字でなくても条件を満たさない. 区切り文字にきたらflagを0にする
-// size_tをintのどっちを使った方がいいのか
+const char	*check(char const *s, char c, size_t count, size_t num)
+{
+	if (count + 1 < num)
+	{
+		while (*s != c)
+			s++;
+		while (*s == c)
+			s++;
+		return (s);
+	}
+	return (s);
+}
+
 size_t	counter(char const *s, char c)
 {
 	size_t	word_count;
@@ -112,7 +106,6 @@ size_t	counter(char const *s, char c)
 	return (word_count);
 }
 
-// メモリ解放
 void	*free_memory(char **return_value, int i)
 {
 	while (i > 0)
@@ -120,3 +113,20 @@ void	*free_memory(char **return_value, int i)
 	free(return_value);
 	return (NULL);
 }
+
+// int	main(void)
+// {
+// 	char	*ptr = "aaabbcccbbd";
+// 	char	**str;
+// 	size_t	i;
+// 	size_t	j;
+
+// 	str = ft_split(ptr, 'b');
+// 	i = counter(ptr, 'b');
+// 	j = 0;
+// 	while (j < i)
+// 	{
+// 		printf("%s\n", str[j]);
+// 		j++;
+// 	}
+// }

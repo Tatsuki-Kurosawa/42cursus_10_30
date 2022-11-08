@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 20:55:14 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/06 20:30:02 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/08 16:25:42 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str = ft_substr(head, 0, tail - head);
 	return (str);
 }
+
+// s1からsetにある文字を削ぎ落とす
+// setとheadから取ってきた一文字ずつをft_strchrに入れ、setにあればポインタが返り、なければNULLが返る性質を利用
+// これを前と後ろから行なっていく
 
 // int	main(void)
 // {

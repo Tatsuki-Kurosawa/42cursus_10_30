@@ -6,7 +6,7 @@
 #    By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/03 17:11:17 by kurosawaits       #+#    #+#              #
-#    Updated: 2022/11/03 21:41:49 by kurosawaits      ###   ########.fr        #
+#    Updated: 2022/11/08 15:34:58 by kurosawaits      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,24 +43,29 @@ SRCS	= 	ft_isalpha.c	\
 			ft_putchar_fd.c	\
 			ft_putstr_fd.c	\
 			ft_putendl_fd.c	\
-			ft_putnbr_fd.c	\
-			*ft_lstnew.c	\
+			ft_putnbr_fd.c
+
+B_SRCS	=	ft_lstnew.c			\
 			ft_lstadd_front.c	\
 			ft_lstsize.c		\
-			ft_lstlast.c	\
+			ft_lstlast.c		\
 			ft_lstadd_back.c	\
-			ft_lstdelone.c	\
-			ft_lstclear.c	\
-			ft_lstiter.c	\
+			ft_lstdelone.c		\
+			ft_lstclear.c		\
+			ft_lstiter.c		\
 			ft_lstmap.c
 
 OBJS	=	$(SRCS:.c=.o)
+B_OBJS	=	$(B_SRCS:.c=.o)
 
-CC	= cc
-
-CFLAGS			= -Wall -Wextra -Werror
+CC		= cc
+CFLAGS	= -Wall -Wextra -Werror
 
 NAME	= libft.a
+
+ifdef FLAG
+OBJS	+= $(B_OBJS) 
+endif
 
 all:	$(NAME)
 
@@ -68,11 +73,14 @@ $(NAME):	$(OBJS)
 			ar rcs $(NAME) $(OBJS)
 
 clean:	
-		rm -f $(OBJS)
+		rm -f $(OBJS) $(B_OBJS)
 
 fclean:	clean
 		rm -rf $(NAME)
 
 re:		fclean all
+
+bonus:
+		@make FLAG=1
 
 .PHONY:	all clean fclean re
