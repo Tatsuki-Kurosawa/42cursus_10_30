@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 19:28:19 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/06 20:34:12 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/14 21:25:04 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,5 @@ void	*ft_memset(void *s, int c, size_t len)
 //     printf("buf文字列→%s\n",buf);
 //     return 0;
 // }
+
+// 第一引数にNULLが入った場合はsegfaが起きる

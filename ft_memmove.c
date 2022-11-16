@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 12:46:09 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/06 19:32:09 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/14 21:10:51 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,3 +41,5 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 //     printf("コピー後のbuf文字列→%s\n",buf);
 //     return 0;
 // }
+
+// どちらかがNULLの場合、segfaが起きる

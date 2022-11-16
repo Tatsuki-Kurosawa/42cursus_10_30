@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 20:21:36 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/10/24 20:21:37 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/15 14:59:26 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,31 @@
 
 char	*ft_strdup(const char *s1)
 {
-	size_t	number_of_byte;
-	char	*ptr;
+	size_t	len;
+	size_t	i;
+	char	*str;
 
-	number_of_byte = ft_strlen(s1);
-	ptr = (char *)malloc(number_of_byte + 1);
-	if (ptr)
-	{
-		ft_strlcpy(ptr, s1, number_of_byte + 1);
-		*(ptr + number_of_byte + 1) = '\0';
-		return (ptr);
-	}
-	else
+	len = ft_strlen(s1);
+	str = malloc(len + 1);
+	if (!str)
 		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		*(str + i) = *(s1 + i);
+		i++;
+	}
+	*(str + i) = '\0';
+	return (str);
 }
 
 // int	main(void)
 // {
-// 	char	str[10] = "";
-// 	char	*str_ptr;
+// 	char	*str1 = "abc";
+// 	char	*str2;
 
-// 	// str_ptr = strdup(str);
-// 	str_ptr = ft_strdup(str);
-// 	printf("%p\n", str);
-// 	printf("%s\n", str);
-// 	printf("%p\n", str_ptr);
-// 	printf("%s\n", str_ptr);
+// 	str2 = ft_strdup(str1);
+// 	printf("%s\n", str1);
+// 	printf("%s\n", str2);
+// 	return (0);
 // }

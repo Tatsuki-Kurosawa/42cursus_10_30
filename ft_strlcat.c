@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 02:47:46 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/07 17:06:07 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/16 13:36:21 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,9 @@ size_t	ft_strlcat(char	*restrict dst, const char *restrict src, size_t dstsize)
 	*dst = '\0';
 	return (dst_len + ft_strlen(c_src));
 }
+
+// 全てつなげられたかどうかが返り値をみてわかる
+// dstsizeで指定した値より返り値が大きかったら、途中までしか繋げられていない
+// → データロスの発生
+// dstsizeで指定した値より返り値が小さかったら、全てコピー繋げることができた
+// → データロスは発生しない

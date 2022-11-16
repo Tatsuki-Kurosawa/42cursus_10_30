@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 20:13:43 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/06 20:28:46 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/14 21:41:59 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ char	*ft_strchr(const char *s, int c)
 		return (str);
 	return (NULL);
 }
+
+// 見つかった場所のポインタを返す. なければNULL
+// 第一引数がNULLの場合はsegfa
+// cについては越えれば一番下または一番上になる
 
 // int	main(void)
 // {

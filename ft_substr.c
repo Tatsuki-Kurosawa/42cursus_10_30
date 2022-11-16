@@ -6,20 +6,20 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 20:30:33 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/08 22:37:54 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/16 20:03:50 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*set_null(char *return_ptr, size_t count);
-char	*set_value(size_t len, char const *s, unsigned int start, char *re_ptr);
+static char	*set_null(char *a, size_t b);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*return_ptr;
+	size_t	i;
 
-	if (s == NULL)
+	if (!s)
 		return (NULL);
 	if (start >= ft_strlen(s) || len == 0)
 		return (ft_strdup(""));
@@ -29,30 +29,19 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return_ptr = (char *)malloc(len + 1);
 	if (!return_ptr)
 		return (NULL);
-	else
-		return (set_value(len, s, start, return_ptr));
-}
-
-char	*set_value(size_t len, char const *s, unsigned int start, char *re_ptr)
-{
-	size_t	count;
-
-	count = 0;
-	while (count < len)
+	i = 0;
+	while (i < len)
 	{
-		if (*(s + start + count) == '\0')
-			return (set_null(re_ptr, count));
-		*(re_ptr + count) = *(s + start + count);
-		count++;
+		if (!*(s + start + i))
+			return (set_null(return_ptr, i));
+		*(return_ptr + i) = *(s + start + i);
+		i++;
 	}
-	*(re_ptr + count) = '\0';
-	return (re_ptr);
+	return (set_null(return_ptr, i));
 }
 
-char	*set_null(char *return_ptr, size_t count)
+static char	*set_null(char *return_ptr, size_t i)
 {
-	*(return_ptr + count) = '\0';
+	*(return_ptr + i) = '\0';
 	return (return_ptr);
 }
-
-// 指定した場所から文字列を複製する

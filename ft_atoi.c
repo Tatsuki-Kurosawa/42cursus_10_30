@@ -6,13 +6,13 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 06:42:11 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/08 15:58:28 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/14 20:17:30 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_ovunflow(int sign, unsigned long sum, char c);
+int	check_ovunflow(int, unsigned long, char);
 
 int	ft_atoi(const char *str)
 {
@@ -67,3 +67,5 @@ int	check_ovunflow(int sign, unsigned long sum, char c)
 //     printf("%d\n", n);
 //     return 0;
 // }
+
+// int型の最大値最小値を超えた文字列を入力すると、一周する

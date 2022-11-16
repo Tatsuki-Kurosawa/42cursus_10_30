@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 00:20:05 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/08 22:21:47 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/11 18:26:01 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,12 @@ void	*free_memory(char **return_value, int i)
 	free(return_value);
 	return (NULL);
 }
+
+// split関数では返り値のダブルポインタを用意し（容量はcounterで確保）、allocate関数からの返り値を代入する
+// allocate関数は返すべき単語を一つずつ返す
+// check関数はsplit関数の繰り返しを制御. 単語数を基準としているため、ヌル文字判定は不要
+// counter関数は単語数をカウント. 単語の先頭で単語をカウント
+// free_memory関数はallocate関数の返り値がNULLだった時に動き、確保したメモリを解放
 
 // int	main(void)
 // {

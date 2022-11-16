@@ -6,11 +6,11 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:45:49 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/10/12 01:20:36 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/14 20:13:56 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {
@@ -22,7 +22,7 @@ int	ft_isalnum(int c)
 
 // int main(void)
 // {
-//     for (int i = 0; i <= 255; i++)
+//     for (int i = 0; i <= 127; i++)
 //     {
 //         printf("%c _ %d\n", i, ft_isalnum(i));
 //     }
