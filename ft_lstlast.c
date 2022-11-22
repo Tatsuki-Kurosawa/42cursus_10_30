@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 19:27:05 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/06 19:27:06 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/23 03:06:16 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,3 +20,5 @@ t_list	*ft_lstlast(t_list *lst)
 		lst = lst->next;
 	return (lst);
 }
+
+// 最後のノードを指すポインタを返す

@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 19:20:56 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/06 19:23:03 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/23 02:27:26 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ void	*ft_calloc(size_t count, size_t size)
 	ft_bzero(temp, count * size);
 	return (temp);
 }
+
+// mallocの引数がsize_t型であるため、countとsizeの積がsize_t型の最大値を超えてはならない
+// そのため、mallocで確保する前に確認を行なっている
 
 // int	main(void)
 // {

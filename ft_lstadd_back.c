@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 18:58:27 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/03 16:34:30 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/23 02:51:35 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ void	ft_lstadd_back(t_list **list, t_list *new)
 	}
 }
 
-// newはt_list型の値（ノード)をさすポインタ型の値のため、
+// **listが指しているノードのポインタがあるかないかで処理が分かれる.
+// ない時はnewが**listの参照先になり、ある時は**listの指すノードの最後のやつに加える

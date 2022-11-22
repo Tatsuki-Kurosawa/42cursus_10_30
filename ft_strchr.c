@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 20:13:43 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/14 21:41:59 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/19 16:29:48 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strchr(const char *s, int c)
 // 	char	test[20] = "abcdefghijk";
 // 	char	*p;
 
-// 	p = ft_strchr(test, 'i' + 256);
+// 	p = ft_strchr(test, 0);
 // 	printf("検索文字が見つかった場所から表示→%s\n", p);
 // 	return (0);
 // }

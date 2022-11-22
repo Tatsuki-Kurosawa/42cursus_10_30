@@ -6,13 +6,13 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 06:42:11 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/14 20:17:30 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/21 20:30:04 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_ovunflow(int, unsigned long, char);
+int	check_ovunflow(int a, unsigned long b, char c);
 
 int	ft_atoi(const char *str)
 {
