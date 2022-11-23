@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 20:05:19 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/20 04:14:34 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/23 11:55:57 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,12 @@ void	ft_putnbr_fd(int n, int fd)
 		return ;
 	}
 }
+// 余りを求めた順に並べると数字の並びが逆になってしまうため、再帰関数を使って前から並べるようにする.
 
-int	main(void)
-{
-	ft_putnbr_fd(100, 1);
-	// ft_putnbr_fd(-48, 1);
-	// printf("\n");
-	// printf("%d\n", 46/(-10));
-}
+// int	main(void)
+// {
+// 	ft_putnbr_fd(100, 1);
+// 	// ft_putnbr_fd(-48, 1);
+// 	// printf("\n");
+// 	// printf("%d\n", 46/(-10));
+// }

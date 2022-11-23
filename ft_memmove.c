@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 12:46:09 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/14 21:10:51 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/23 11:43:31 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
+// voidポインタ型だと一度に見るべき容量がわからないため、どの容量にも対応できるよう1バイトでみれるcharポインタ型を利用.
+// 変換を行なってからコピーを行う.
+// メモリの位置によりコピーの仕方を変更する.
 
 // int main(void)
 // {

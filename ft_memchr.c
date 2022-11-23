@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 14:51:42 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/08 18:12:51 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/23 11:31:57 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+// 第二引数のcをunsigned charに変換してから一致しているかどうかの評価を行うので、第一引数sはunsigned char型に変換する.
 
 	// if ((unsigned char)c == '\0' && n != 0)
 	// 	return (ptr);

@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 00:20:05 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/11 18:26:01 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/23 12:15:34 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,11 @@ char	**ft_split(char const *s, char c)
 	return_value[count] = NULL;
 	return (return_value);
 }
+// ↑の関数では、単語数回だけ単語を取り出す処理を行えば良い.
+// allocate関数からは単語が格納された領域のアドレスをさすポインタが返ってくる.
+// 場合によってはNULLが返ることもあり、その場合にはfree_memory関数に確保したメモリを全て解放させる.
+// check関数ではsの更新を行なっている. allocate関数内ではポインタを動かすが値を返した時点ではポインタを動かしていないため、
+// check関数にてポインタを動かしている. 区切り文字でないものをずらす→区切り文字であるものをずらす
 
 char	*allocate(char *s, char c)
 {
@@ -69,6 +74,8 @@ char	*allocate(char *s, char c)
 	*(str + i) = '\0';
 	return (str);
 }
+// ↑の関数では、単語の先頭と単語の最後のアドレスを指すポインタを利用して取得すべきメモリを確保して、
+// 実際に格納するところまでを行う. 処理終了時にはヌル終端された単語が入った塊ができる.
 
 const char	*check(char const *s, char c, size_t count, size_t num)
 {
@@ -82,6 +89,7 @@ const char	*check(char const *s, char c, size_t count, size_t num)
 	}
 	return (s);
 }
+// 次のループで評価するべき部分までポインタを動かす. 区切り文字でないものをずらす→区切り文字であるものをずらす.
 
 size_t	counter(char const *s, char c)
 {
@@ -105,6 +113,9 @@ size_t	counter(char const *s, char c)
 	}
 	return (word_count);
 }
+// ↑単語数を数えている
+// 区切り文字の次の文字が単語の先頭ととらえてこのタイミングでカウントする
+// flagを併用して区切り文字の次かどうか判断. またこのことにより、連続した文字でカウントしないようにしている.
 
 void	*free_memory(char **return_value, int i)
 {
@@ -113,6 +124,7 @@ void	*free_memory(char **return_value, int i)
 	free(return_value);
 	return (NULL);
 }
+// メモリの解放. 内側のダブルポインタが指すポインタを解放して、最後にダブルポインタ自体を解放する.
 
 // split関数では返り値のダブルポインタを用意し（容量はcounterで確保）、allocate関数からの返り値を代入する
 // allocate関数は返すべき単語を一つずつ返す

@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 19:30:08 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/08 00:30:09 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/23 11:34:13 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+// 比較する値はunsigned char型として扱うため、第一引数をunsigned char型に変換する.
 
 // int main(void)
 // {

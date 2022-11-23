@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 20:38:34 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/14 21:22:54 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/23 11:40:12 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
 	}
 	return ((void *)dest);
 }
+// voidポインタ型だと一度に見るべき容量がわからないため、どの容量にも対応できるよう1バイトでみれるcharポインタ型を利用.
+// 変換を行なってからコピーを行う.
+// メモリが被った時の動作は未定義なので、引数にrestrictの修飾子あり.
 
 // int	main(void)
 // {

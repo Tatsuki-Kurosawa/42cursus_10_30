@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 20:13:43 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/19 16:29:48 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/23 12:17:53 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ char	*ft_strchr(const char *s, int c)
 		return (str);
 	return (NULL);
 }
+// memchar関数とほぼ同じ. 異なるのはunsigned char型へ変換するのではなく、char型に変換するということ.
+// この辺はmanで定義されている.
 
 // 見つかった場所のポインタを返す. なければNULL
 // 第一引数がNULLの場合はsegfa
