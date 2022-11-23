@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:51:28 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/07 14:53:33 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/23 14:59:33 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@ size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 	*(dst + i) = '\0';
 	return (src_len);
 }
+// srcの長さが返ってくることによって、全てコピーされたかどうかがわかる.
+// 引数として送ったdstsizeよりも返り値の方が大きかったら全てコピーできていない.
+// 反対に引数として送ったdstsizeよりも返り値の方が小さかったら全てコピーできている.
 
 // int main(void)
 // {

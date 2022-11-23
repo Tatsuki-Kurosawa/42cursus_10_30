@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 20:21:42 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/06 20:21:43 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/23 15:08:00 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	number_of_byte;
 	char	*return_value;
-	size_t	i;
+	unsigned int	i;
 
 	if (!s || !f)
 		return (NULL);
-	number_of_byte = ft_strlen(s);
-	return_value = (char *)malloc(number_of_byte + 1);
+	return_value = (char *)malloc(ft_strlen(s) + 1);
 	if (!return_value)
 		return (NULL);
 	i = 0;
@@ -33,3 +31,4 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	*(return_value + i) = '\0';
 	return (return_value);
 }
+// 

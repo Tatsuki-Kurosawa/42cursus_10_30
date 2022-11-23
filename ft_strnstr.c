@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:03:12 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/08 02:02:41 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/23 15:15:10 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
+// haystack内にneedleがあるかどうかを判断.
+// あったら合ったところのポインタを返す.
+// memcmpで処理を行うが、lenで指定した範囲を超えて探してしまう場合がある.
+// haystackのバイト数からneedleのバイト数を引いたバイト数分だけ、needleの先頭要素として見ていく
 
 // int	main(void)
 // {

@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 22:17:52 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/07 21:12:48 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/23 15:18:01 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
+// 後ろ側から探し、合致したところのアドレスを指すポインタを返す
+// ft_strchrの逆バージョン
 
 // int main(void)
 // {

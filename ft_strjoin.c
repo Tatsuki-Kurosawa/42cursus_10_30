@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 20:20:11 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/08 16:12:41 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/23 14:40:33 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 }
 
 // 新しいポインタを作り二つの文字列をつなげて入れる
+// mallocでメモリを確保しているため、strlcatのようなdstが容量を多く持っているといったことは心配しなくていい
 
 // int	main(void)
 // {
@@ -49,7 +50,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 // 	char	*s3 = "the nyancat";
 // 	size_t	number;
 
-// 	char	*res = ft_strjoin(s1, s2);
+// 	char	*res = ft_strjoin(s1, s3);
 // 	// char	*res = ft_strjoin(ft_strjoin(s1, s2), s3);
 // 	printf("%s\n", res);
 // 	number = strlen(res);

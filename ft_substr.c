@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 20:30:33 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/11/16 20:03:50 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/23 15:27:41 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,3 +45,8 @@ static char	*set_null(char *return_ptr, size_t i)
 	*(return_ptr + i) = '\0';
 	return (return_ptr);
 }
+
+// メモリは必要容量を確保しなくてはならないため、2つのケースで確保する容量を変える.
+// 第一引数sの文字数が100、startが0、lenが10000の場合、len分とっても構わないが
+// 必要以上に容量を確保しなくてはならないためstrlen(start)-start分とる.（普通の引き算）
+// 第一引数sの文字数が100、startが0、lenが10の場合は、len分とることは適正な量のメモリを確保していることになるためよろし.

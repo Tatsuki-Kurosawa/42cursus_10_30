@@ -6,7 +6,7 @@
 /*   By: kurosawaitsuki <kurosawaitsuki@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 18:03:12 by kurosawaits       #+#    #+#             */
-/*   Updated: 2022/10/15 18:57:35 by kurosawaits      ###   ########.fr       */
+/*   Updated: 2022/11/23 15:05:01 by kurosawaits      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ size_t	ft_strlen(const char *s)
 	}
 	return (count);
 }
+// ヌル文字はカウントしない.
 
 // int main(void)
 // {
